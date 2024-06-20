@@ -4,9 +4,10 @@
 <head>
 <style>
 
+
+
 	.carousel {
-  position: relative;
-  width: 100%;
+
   border: none;
 }
 .carousel iframe {
@@ -40,12 +41,14 @@
 
 <body>
 <div class="carousel">
+	
+
   <iframe src="https://buffymcduffin.github.io/JugendOhneKlub/demographic.html"></iframe>
 
   <iframe src="https://buffymcduffin.github.io/JugendOhneKlub/demographic_cohort.html"></iframe>
 
-  <button class="prev">Prev</button>
-  <button class="next", type="button">Next</button>
+
+  <button class="next", type="button">Quer-/Längschnitt</button>
 </div>
 
 
@@ -56,15 +59,9 @@
 	
 	const carousel = document.querySelector('.carousel');
 	const images = carousel.querySelectorAll('iframe');
-	let currentIndex = -1;
+	let currentIndex = 1;
 
-	carousel.querySelector('.prev').addEventListener('click', () => {
-  		currentIndex--;
-  		if (currentIndex < 0) {
-   	 		currentIndex = images.length - 1; 
-  		} 
- 	 updateCarousel(); 
-	});
+
 
 	carousel.querySelector('.next').addEventListener('click', () => { 
 	currentIndex++; 
