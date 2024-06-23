@@ -1,0 +1,129 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+
+
+	.carousel {
+
+  border: none;
+}
+.carousel iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 85%;
+  border: none;
+}
+.carousel .buttons {
+  position: absolute;
+  top: 90%;
+  transform: translateY(-50%);
+  display: block;
+}
+
+button{
+    width: 250px;
+    height: 50px;
+    margin: 0 auto;
+    padding: 0;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+
+.active{
+  background-color:green;
+  outline: none;
+}
+
+iframe{
+	display: none;
+}
+
+</style>
+
+
+
+
+</head>
+
+<body>
+<div class="carousel">
+	
+
+
+  <iframe src="https://buffymcduffin.github.io/JugendOhneKlub/KONSUM/drogen_insgesamt.html", id = "Gesamt", style="display: block;"></iframe>
+  <iframe src="https://buffymcduffin.github.io/JugendOhneKlub/KONSUM/cannabis.html", id="Cannabis"></iframe>
+  <iframe src="https://buffymcduffin.github.io/JugendOhneKlub/KONSUM/kokain.html", id="Kokain"></iframe>
+  <iframe src="https://buffymcduffin.github.io/JugendOhneKlub/KONSUM/XTC.html", id="XTC"></iframe>
+
+  <div class="buttons">
+  	<button type="button", id="Gesamt">Gesamt</button>
+  	<button type="button", id="Cannabis">Cannabis</button>
+  	<button type="button", id="Kokain">Kokain</button>
+  	<button type="button", id="XTC">Extasy</button>
+  </div>
+</div>
+
+
+
+
+<script type="text/javascript">
+	
+	const carousel = document.querySelector('.carousel');
+	const buttons = document.querySelector('.buttons');
+	const images = carousel.querySelectorAll('iframe');
+	const btns = buttons.querySelectorAll('button');
+
+	let currentID = "Gesamt";
+
+
+
+
+
+		buttons.querySelector('#Gesamt').addEventListener('click', () => { 
+			currentID = "Gesamt"; 
+  		updateCarousel(); 
+	});
+		buttons.querySelector('#Cannabis').addEventListener('click', () => { 
+	currentID = "Cannabis";  
+
+  		updateCarousel(); 
+	});
+
+				buttons.querySelector('#Kokain').addEventListener('click', () => { 
+	currentID = "Kokain";  
+
+  		updateCarousel(); 
+	});
+		buttons.querySelector('#XTC').addEventListener('click', () => { 
+	currentID = "XTC";  
+  		updateCarousel(); 
+	});
+
+
+	function updateCarousel() {
+  		images.forEach((image) => {
+    		if (image.getAttribute('id') === currentID) {
+    		  image.style.display = 'block';
+    		} else {
+     		image.style.display = 'none';
+    		}
+  		});				
+  		btns.forEach((button) => {
+  		if (button.getAttribute('id') === currentID) {
+  			button.style.backgroundColor = '#117bb8';
+  		}else {
+				button.style.backgroundColor= '';
+  			}
+			});
+	}	
+
+</script>
+</body>
+
+</html>
