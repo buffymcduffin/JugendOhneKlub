@@ -7,16 +7,14 @@
 
 
 	.carousel {
-		all: initial;
 
   border: none;
 }
-.carousel embed {
-	all: initial;
+.carousel iframe {
   position: absolute;
   top: 0;
   left: 0;
-  width: 70%;
+  width: 100%;
   height: 85%;
   border: none;
 }
@@ -42,8 +40,8 @@ button{
   outline: none;
 }
 
-embed{
-	display: none;
+iframe{
+	visibility: hidden;
 }
 
 </style>
@@ -58,10 +56,10 @@ embed{
 	
 
 
-  <embed src="https://buffymcduffin.github.io/JugendOhneKlub/KONSUM/drogen_insgesamt.html", id = "Gesamt", style="display: block;"></embed>
-  <embed src="https://buffymcduffin.github.io/JugendOhneKlub/KONSUM/cannabis.html", id="Cannabis"></embed>
-  <embed src="https://buffymcduffin.github.io/JugendOhneKlub/KONSUM/kokain.html", id="Kokain"></embed>
-  <embed src="https://buffymcduffin.github.io/JugendOhneKlub/KONSUM/XTC.html", id="XTC"></embed>
+  <iframe src="https://buffymcduffin.github.io/JugendOhneKlub/KONSUM/drogen_insgesamt.html", id = "Gesamt", style="visibility: visible;"></iframe>
+  <iframe src="https://buffymcduffin.github.io/JugendOhneKlub/KONSUM/cannabis.html", id="Cannabis"></iframe>
+  <iframe src="https://buffymcduffin.github.io/JugendOhneKlub/KONSUM/kokain.html", id="Kokain"></iframe>
+  <iframe src="https://buffymcduffin.github.io/JugendOhneKlub/KONSUM/XTC.html", id="XTC"></iframe>
 
   <div class="buttons">
   	<button type="button", id="Gesamt">Gesamt</button>
@@ -78,7 +76,7 @@ embed{
 	
 	const carousel = document.querySelector('.carousel');
 	const buttons = document.querySelector('.buttons');
-	const images = carousel.querySelectorAll('embed');
+	const images = carousel.querySelectorAll('iframe');
 	const btns = buttons.querySelectorAll('button');
 
 	let currentID = "Gesamt";
@@ -111,9 +109,9 @@ embed{
 	function updateCarousel() {
   		images.forEach((image) => {
     		if (image.getAttribute('id') === currentID) {
-    		  image.style.display = 'block';
+    		  image.style.visibility = 'visible';
     		} else {
-     		image.style.display = 'none';
+     		image.style.visibility = 'hidden';
     		}
   		});				
   		btns.forEach((button) => {
