@@ -10,7 +10,7 @@
 
   border: none;
 }
-.carousel iframe {
+.carousel embed {
   position: absolute;
   top: 0;
   left: 0;
@@ -40,7 +40,7 @@ button{
   outline: none;
 }
 
-iframe{
+embed{
 	display: none;
 }
 
@@ -56,10 +56,10 @@ iframe{
 	
 
 
-  <iframe src="https://buffymcduffin.github.io/JugendOhneKlub/KONSUM/drogen_insgesamt.html", id = "Gesamt", style="display: block;"></iframe>
-  <iframe src="https://buffymcduffin.github.io/JugendOhneKlub/KONSUM/cannabis.html", id="Cannabis"></iframe>
-  <iframe src="https://buffymcduffin.github.io/JugendOhneKlub/KONSUM/kokain.html", id="Kokain"></iframe>
-  <iframe src="https://buffymcduffin.github.io/JugendOhneKlub/KONSUM/XTC.html", id="XTC"></iframe>
+  <embed src="https://buffymcduffin.github.io/JugendOhneKlub/KONSUM/drogen_insgesamt.html", id = "Gesamt", style="display: block;"></embed>
+  <embed src="https://buffymcduffin.github.io/JugendOhneKlub/KONSUM/cannabis.html", id="Cannabis"></embed>
+  <embed src="https://buffymcduffin.github.io/JugendOhneKlub/KONSUM/kokain.html", id="Kokain"></embed>
+  <embed src="https://buffymcduffin.github.io/JugendOhneKlub/KONSUM/XTC.html", id="XTC"></embed>
 
   <div class="buttons">
   	<button type="button", id="Gesamt">Gesamt</button>
@@ -76,7 +76,7 @@ iframe{
 	
 	const carousel = document.querySelector('.carousel');
 	const buttons = document.querySelector('.buttons');
-	const images = carousel.querySelectorAll('iframe');
+	const images = carousel.querySelectorAll('embed');
 	const btns = buttons.querySelectorAll('button');
 
 	let currentID = "Gesamt";
